@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ post.title }}{% end block %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
 <article>
     <h2>{{post.title}}</h2>
-    <p><strong>Author:</strong>{{ post.author }}</p>
-    <P><strong>Date Posted:</strong >{{post.date_posted.strftime}}</P>
-    <!-- <p>{{ post.content }}</p> -->
-     {% for paragraph in post.content.split('\n') %}
-     {% if paragraph %}
+    <p><strong>Author:</strong> {{ post.author }}</p>
+    <p><strong>Date Posted:</strong> {{post.date_posted.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+    
+    {% for paragraph in post.content.split('\n') %}
+        {% if paragraph %}
+            <p>{{ paragraph }}</p>
+        {% endif %}
+    {% endfor %}
+    
+    <!-- Add these action buttons -->
+    <div class="post-actions" style="margin-top: 40px; display: flex; gap: 16px; justify-content: center;">
+        <a href="{{ url_for('edit_post', id=post.id) }}" class="btn btn2">✏️ Edit Post</a>
+        <a href="{{ url_for('delete_post', id=post.id) }}" class="btn danger">🗑️ Delete Post</a>
+        <a href="{{ url_for('home') }}" class="btn">🏠 Back to Home</a>
+    </div>
 </article>
+{% endblock %}
