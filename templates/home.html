@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div class="post">
+    <h2>About Me</h2>
+    <p>Heyy!! I am V Kirubha. I am from Edapally. I completed my studies from Campion School.</p>
+  </div>
+
+  {% for post in posts %}
+    <div class="post">
+      <h2>{{ post.title }}</h2>
+      <p>By {{ post.author }} on {{ post.date_posted.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+      <p>{{ post.content }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}

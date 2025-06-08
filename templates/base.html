@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}My Blog{% endblock %}</title>
+
+  <!-- Google Fonts & Custom Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Gateway to my world</h1>
+      <p>Welcome to my personal space of expression and ideas!</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav style="text-align:center; margin-bottom: 30px;">
+      <a href="{{ url_for('home') }}" style="margin: 0 15px; color: #38bdf8; text-decoration: none;">Home</a>
+      <a href="{{ url_for('about') }}" style="margin: 0 15px; color: #8b5cf6; text-decoration: none;">About</a>
+      <a href="{{ url_for('add_post') }}" style="margin: 0 15px; color: #ec4899; text-decoration: none;">New Post</a>
+    </nav>
+
+    <!-- Dynamic Content -->
+    {% block content %}{% endblock %}
+
+    <footer style="text-align:center; margin-top: 60px;">
+      <p>&copy; 2024 My Blog</p>
+    </footer>
+  </div>
+</body>
+</html>

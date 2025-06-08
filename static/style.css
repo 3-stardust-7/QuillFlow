@@ -1,0 +1,31 @@
+.container {
+    color: rgb(64, 0, 255);
+    padding: 15px;
+    background-color: burlywood;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    font-size: medium;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 255, 0.2);
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+h1, h2 {
+    font-weight: bold;
+    text-align: center;
+    color: rgb(30, 0, 150);
+}
+
+p {
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.post {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f0e6d2;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+}
